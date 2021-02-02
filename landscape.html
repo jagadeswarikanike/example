@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="C:\Users\PS\Documents\jaya\landscape\landscape.css" type="text/css">
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
@@ -16,29 +18,32 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  
    
-<div>
-   <img style="height: 100vh;width: 100vw;" src="https://www.searchenginejournal.com/wp-content/uploads/2018/10/How-to-Boost-Your-Images%E2%80%99-Visibility-on-Google-Images-760x400.png"/>
-</div>
 
-
-<script>
-
-if (window.matchMedia("(orientation: portrait)").matches) {
-   $('body').css({
-        "-webkit-transform": "rotate(90deg)"
-    });
-    alert("Please use Landscape!");
-    window.addEventListener("orientationchange", function() {
-  // Announce the new orientation number
-  alert(window.orientation);
-}, false);
+    <div>
+      Some content here
+  </div>
+  
+  
+  
+  <script>
+     function checkOrientation() {
+    var winWidth = $(window).width();
+    var winHeight = $(window).height();
+    
+    if (winHeight > winWidth) {
+        $('body').width(winHeight).height(winWidth);
+    }
 }
 
-if (window.matchMedia("(orientation: landscape)").matches) {
-   // you're in LANDSCAPE mode
-}
-</script>
+checkOrientation()
+
+var resizeEnd;
+$(window).resize(function(){
+  clearTimeout(resizeEnd);
+  resizeEnd = setTimeout(checkOrientation, 100);
+});
+  </script>
+
 </body>
 </html>
