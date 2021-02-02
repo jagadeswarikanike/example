@@ -30,6 +30,10 @@ if (window.matchMedia("(orientation: portrait)").matches) {
         "-webkit-transform": "rotate(90deg)"
     });
     alert("Please use Landscape!");
+    window.addEventListener("orientationchange", function() {
+  // Announce the new orientation number
+  alert(window.orientation);
+}, false);
 }
 
 if (window.matchMedia("(orientation: landscape)").matches) {
